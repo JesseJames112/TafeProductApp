@@ -21,6 +21,7 @@ namespace ProductApps
     public partial class MainWindow : Window
     {
         Product cProduct;
+        private static int DEFAULT_DELIVERY_CHARGE = 25;
 
         public MainWindow()
         {
@@ -34,6 +35,7 @@ namespace ProductApps
                 cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text));
                 cProduct.calTotalPayment();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
+                deliveryChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + DEFAULT_DELIVERY_CHARGE);
             }
             catch (FormatException)
             {
