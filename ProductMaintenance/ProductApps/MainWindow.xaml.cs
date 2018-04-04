@@ -23,6 +23,7 @@ namespace ProductApps
         Product cProduct;
         private static int DEFAULT_DELIVERY_CHARGE = 25;
         private static int DEFAULT_WRAPPING_CHARGE = 5;
+        private static decimal DEFAULT_GST_CHARGE = 1.1m;
 
         public MainWindow()
         {
@@ -38,6 +39,7 @@ namespace ProductApps
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
                 deliveryChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + DEFAULT_DELIVERY_CHARGE);
                 wrapChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + DEFAULT_DELIVERY_CHARGE + DEFAULT_WRAPPING_CHARGE);
+                gstChargeTextBlock.Text = Convert.ToString((cProduct.TotalPayment + DEFAULT_DELIVERY_CHARGE + DEFAULT_WRAPPING_CHARGE)* DEFAULT_GST_CHARGE);
             }
             catch (FormatException)
             {
