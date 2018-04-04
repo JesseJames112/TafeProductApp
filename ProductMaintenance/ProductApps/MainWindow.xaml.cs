@@ -22,6 +22,7 @@ namespace ProductApps
     {
         Product cProduct;
         private static int DEFAULT_DELIVERY_CHARGE = 25;
+        private static int DEFAULT_WRAPPING_CHARGE = 5;
 
         public MainWindow()
         {
@@ -36,6 +37,7 @@ namespace ProductApps
                 cProduct.calTotalPayment();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
                 deliveryChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + DEFAULT_DELIVERY_CHARGE);
+                wrapChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + DEFAULT_DELIVERY_CHARGE + DEFAULT_WRAPPING_CHARGE);
             }
             catch (FormatException)
             {
